@@ -1,0 +1,20 @@
+header{
+    height: 90px;
+    border: 1px solid red;
+    text-align: center;
+}
+
+
+.brand{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    color: #8C7ED8;
+    height: 100%;
+    width: 20%;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
