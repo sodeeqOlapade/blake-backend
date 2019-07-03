@@ -5,10 +5,12 @@ import styles from './header.module.css';
 function Header() {
   return (
     <header>
-      <div className={styles.brand}>.Blake</div>
+      <div className={styles.brand}>
+        <Link className={styles.brandLink}>.Blake</Link>
+      </div>
 
       <nav className={styles.mainNavigation}>
-        <ul  className = {styles.navItems}>
+        <ul className={styles.navItems}>
           <Link className={styles.navItem} to="/">
             Home
           </Link>
