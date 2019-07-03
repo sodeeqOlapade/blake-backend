@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/header/header';
+import Footer from '../../components/footer/footer';
 
 function Home(props) {
 
@@ -9,6 +10,8 @@ function Home(props) {
     <Header />
 
     <h1>Homeeeee</h1>
+
+    <Footer />
     </>
   )
 }

@@ -6,7 +6,7 @@ function Header() {
   return (
     <header>
       <div className={styles.brand}>
-        <Link className={styles.brandLink}>.Blake</Link>
+        <Link className={styles.brandLink} to = '/'>.Blake</Link>
       </div>
 
       <nav className={styles.mainNavigation}>
