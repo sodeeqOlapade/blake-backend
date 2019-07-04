@@ -12,9 +12,10 @@ footer {
 .socialMediaIcons {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   border-right: 1px dashed #838B93;
   background: black;
+  width: 15%;
 }
 
 .socialMediaIcon {
