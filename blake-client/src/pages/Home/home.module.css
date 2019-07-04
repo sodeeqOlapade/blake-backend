@@ -5,6 +5,8 @@
   justify-content: center;
   width: 100%;
   height: 500px;
+  background: #ffffff;
+  padding: 90px 0px;
 }
 
 .bannerText {
@@ -17,6 +19,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 0;
   /* border: 1px solid orange; */
 }
 
@@ -26,6 +29,7 @@
   justify-content: center;
   align-content: center;
   width: 42%;
+  z-index: 0;
   /* border: 1px solid red; */
 }
 
@@ -63,4 +67,24 @@
 
 Button{
     margin-right: 40px;
+}
+
+h2{
+    text-align: center;
+    margin: 80px 0px;
+    font-size: 50px;
+}
+
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+}
+
+Footer{
+    margin-top: 50px;;
 }

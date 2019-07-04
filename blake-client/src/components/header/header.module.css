@@ -8,6 +8,9 @@ header {
   background: #ffffff;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0.33333rem 0 1.33333rem rgba(87, 87, 87, 0.1);
+  z-index: 10;
+  position: fixed;
+  width: 100%;
 }
 
 .mainNavigation {

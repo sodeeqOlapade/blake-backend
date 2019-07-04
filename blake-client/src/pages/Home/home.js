@@ -4,6 +4,7 @@ import Footer from '../../components/footer/footer';
 import styles from './home.module.css';
 import Button from '../../components/button/button';
 import { Link } from 'react-router-dom';
+import Card from '../../components/card/card';
 
 function Home(props) {
   console.log('from home: ', props.match);
@@ -25,14 +26,14 @@ function Home(props) {
           </div>
 
           <div className={styles.buttons}>
-            <Link to = '/signup'>
+            <Link to="/signup">
               <Button
                 primary={true}
                 textValue="Get Started"
                 className={styles.primary}
               />
             </Link>
-            <Link to = '/about'>
+            <Link to="/about">
               <Button primary={false} textValue="Read More" />
             </Link>
           </div>
@@ -41,11 +42,39 @@ function Home(props) {
         <div className={styles.bannerPic} />
       </div>
 
+      <h2>With Blake, you've got...</h2>
 
-      <h2>Why Choose Blake?</h2>
-
-      <div className = {styles.cards}>
-    
+      <div className={styles.cards}>
+        <Card
+          title="24/7 Support"
+          imagename="clock-icon.png"
+          description="img elements must have an alt prop, either with meaningful text, or an empty string for decorative images "
+        />
+        <Card
+          title="Convenience"
+          imagename="convenience.svg"
+          description="img elements must have an alt prop, either with meaningful text, or an empty string for decorative images "
+        />{' '}
+        <Card
+          title="No Paper work"
+          imagename="paperwork.png"
+          description="img elements must have an alt prop, either with meaningful text, or an empty string for decorative images "
+        />
+        <Card
+          title="Remote Access"
+          imagename="remote.png"
+          description="img elements must have an alt prop, either with meaningful text, or an empty string for decorative images "
+        />
+        <Card
+          title="Reduced Cost"
+          imagename="reducedcost.png"
+          description="img elements must have an alt prop, either with meaningful text, or an empty string for decorative images "
+        />
+        <Card
+          title="Coordinated Feedback"
+          imagename="feedback.png"
+          description="img elements must have an alt prop, either with meaningful text, or an empty string for decorative images "
+        />
       </div>
       <Footer />
     </>
