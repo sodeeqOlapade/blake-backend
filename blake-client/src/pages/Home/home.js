@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import Card from '../../components/card/card';
 
 function Home(props) {
-  console.log('from home: ', props.match);
   return (
     <>
       <Header />
