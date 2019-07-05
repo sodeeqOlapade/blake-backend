@@ -41,7 +41,7 @@ function Home(props) {
         <div className={styles.bannerPic} />
       </div>
 
-      <h2>With Blake, you've got...</h2>
+      <h2 className = {styles.pros}>With Blake, you've got...</h2>
 
       <div className={styles.cards}>
         <Card

@@ -1,22 +1,24 @@
 import React from 'react';
+import styles from './login.module.css';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
-import styles from './signup.module.css';
 import Input from '../../components/input/input';
 import Button from '../../components/button/button';
 
-function Signup() {
+
+
+function Login(props) {
   return (
     <>
       <Header />
       <section className={styles.mainSection}>
         <div className={styles.scalfold}>
           <div className={styles.display}>
-            <span className={styles.blake}>.Blake</span>
+            {/* <span className={styles.blake}>.Blake</span>
             <h4>
               img elements must have an alt prop, either with meaningful text,
               or an empty string for decorative images
-            </h4>
+            </h4> */}
           </div>
 
           <div className={styles.form}>
@@ -25,25 +27,11 @@ function Signup() {
             </div>
             <form>
               <Input
-                placeholder="Name"
-                id="name"
-                value=""
-                label="name"
-                type="text"
-              />
-              <Input
                 placeholder="Email"
                 id="email"
                 value=""
                 label="email"
                 type="email"
-              />
-              <Input
-                placeholder="Mobile number"
-                id="mobile-number"
-                value=""
-                label="mobile-number"
-                type="number"
               />
               <Input
                 placeholder="Password"
@@ -55,7 +43,7 @@ function Signup() {
 
               <Button
                 primary={false}
-                textValue="Sign Up"
+                textValue="Login"
                 className={styles.signupButton}
               />
             </form>
@@ -67,4 +55,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Login;

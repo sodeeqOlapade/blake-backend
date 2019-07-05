@@ -20,9 +20,8 @@
 .display {
   /* border: 1px solid green; */
   width: 50%;
-  /* opacity: .5; */
-  background: url('./images/background0.png');
   /* background: #705ECF; */
+  background: url('./images/background0.png');
   border-top-right-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -43,7 +42,7 @@
 }
 
 .signupTitle {
-  color: #d32d60;
+  color: #18a668;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -61,3 +60,4 @@ h2 {
   font-size: 35px;
   text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
 }
+

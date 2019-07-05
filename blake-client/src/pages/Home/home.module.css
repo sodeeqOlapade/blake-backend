@@ -50,37 +50,36 @@
 }
 
 .connect {
-  color: #705ECF;
+  color: #705ecf;
 }
 
 .business {
   color: #18a668;
 }
 
-.buttons{
-    /* border: 1px solid purple; */
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    padding: 0px 10px 0px 80px;
+.buttons {
+  /* border: 1px solid purple; */
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0px 10px 0px 80px;
 }
 
-Button{
-    margin-right: 40px;
+button {
+  margin-right: 40px;
 }
 
-h2{
-    text-align: center;
-    margin: 80px 0px;
-    font-size: 50px;
+.pros {
+  text-align: center;
+  margin: 90px 0px;
+  font-size: 50px;
 }
 
-
-.cards{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 100px;
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
 }
