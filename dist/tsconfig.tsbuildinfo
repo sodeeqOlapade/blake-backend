@@ -125,25 +125,9 @@
         "version": "873c09f1c309389742d98b7b67419a8e0a5fa6f10ce59fd5149ecd31a2818594",
         "signature": "873c09f1c309389742d98b7b67419a8e0a5fa6f10ce59fd5149ecd31a2818594"
       },
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts": {
-        "version": "910c64550f9219789f8cf868c1dc58ca9bb70122b9c0a7a3b7bc26815bc5adb8",
-        "signature": "3e86eb6d67ed28e7aa26d88873307529007ac0d03d19217d1d6c897c8ccac908"
-      },
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts": {
-        "version": "7cced8a0a303b09cf776a7432ca540061debb1f8e49226dd1659cbd07be163ca",
-        "signature": "91548beb34bb9a0e564a57ef0f420e1bfd46d7bf5e6ce65dab843d6821fe298e"
-      },
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts": {
-        "version": "b490d897c4ba01cd926744448b86d9e97a35d0f9c545d633dd0791cdd84a38b5",
-        "signature": "91548beb34bb9a0e564a57ef0f420e1bfd46d7bf5e6ce65dab843d6821fe298e"
-      },
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts": {
-        "version": "d9422bf2f3d2b4a02d901bd80370b6e58b4165e4bf488b99a3687c6eea721d27",
-        "signature": "d9422bf2f3d2b4a02d901bd80370b6e58b4165e4bf488b99a3687c6eea721d27"
-      },
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babylon/index.d.ts": {
-        "version": "e7ef01fb3213b1be13321648ac2612d60e9e2742e28fc2fcf68d27fb965a8d5c",
-        "signature": "e7ef01fb3213b1be13321648ac2612d60e9e2742e28fc2fcf68d27fb965a8d5c"
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/http-errors/index.d.ts": {
+        "version": "927983fe9ddb84fd16275899ebec838ecfa2d7896c53efa450b5558795588d47",
+        "signature": "927983fe9ddb84fd16275899ebec838ecfa2d7896c53efa450b5558795588d47"
       },
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/globals.d.ts": {
         "version": "e4461b72726848da76a31153b6b01af5e0be3b08dbfa2ec5741ad302eb20f2ed",
@@ -321,14 +305,6 @@
         "version": "765fc34423b93c2ab763670d8d11d99e5f47387c13c161d6f1640dd6d91b7d1c",
         "signature": "765fc34423b93c2ab763670d8d11d99e5f47387c13c161d6f1640dd6d91b7d1c"
       },
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts": {
-        "version": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82",
-        "signature": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82"
-      },
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts": {
-        "version": "1b7919dbb6b43ff272f38f6f6522fb9f4e9e854356b2932a36aa4674f4a2fcf2",
-        "signature": "1b7919dbb6b43ff272f38f6f6522fb9f4e9e854356b2932a36aa4674f4a2fcf2"
-      },
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/range-parser/index.d.ts": {
         "version": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
         "signature": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b"
@@ -345,9 +321,45 @@
         "version": "b27dd918d8c3f10270cadea529c69e3a9b37ce59db0852945a39068cc5c10fff",
         "signature": "b27dd918d8c3f10270cadea529c69e3a9b37ce59db0852945a39068cc5c10fff"
       },
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts": {
+        "version": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82",
+        "signature": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82"
+      },
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts": {
+        "version": "1b7919dbb6b43ff272f38f6f6522fb9f4e9e854356b2932a36aa4674f4a2fcf2",
+        "signature": "1b7919dbb6b43ff272f38f6f6522fb9f4e9e854356b2932a36aa4674f4a2fcf2"
+      },
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts": {
         "version": "a6742e25ac12860727c22a379707e050a126c48c4dd98ddd795a3a33dd0a63c7",
         "signature": "a6742e25ac12860727c22a379707e050a126c48c4dd98ddd795a3a33dd0a63c7"
+      },
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/cookie-parser/index.d.ts": {
+        "version": "a1df8fab03cc0f18714669348226e0edf320cd0ac6771a8c2b23abe97f1867e2",
+        "signature": "a1df8fab03cc0f18714669348226e0edf320cd0ac6771a8c2b23abe97f1867e2"
+      },
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/morgan/index.d.ts": {
+        "version": "d331c83227ae5b3090f0d46fc6738d96b6959b2365571fa56d052acec81a5a1a",
+        "signature": "d331c83227ae5b3090f0d46fc6738d96b6959b2365571fa56d052acec81a5a1a"
+      },
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts": {
+        "version": "b4a86e9ae8ed7ef5504aa88aa91df27516af024197180768a2873f801c1d0185",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts": {
+        "version": "cc12c83f08a835fd1f58fb7a57257883afa485d384cd27f4a5b0ad56667a8d6c",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts": {
+        "version": "96350e9d29606289070b3e250f4e8d445bede9bb1856aa425c5a2a55d2e08030",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts": {
+        "version": "d9422bf2f3d2b4a02d901bd80370b6e58b4165e4bf488b99a3687c6eea721d27",
+        "signature": "d9422bf2f3d2b4a02d901bd80370b6e58b4165e4bf488b99a3687c6eea721d27"
+      },
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babylon/index.d.ts": {
+        "version": "e7ef01fb3213b1be13321648ac2612d60e9e2742e28fc2fcf68d27fb965a8d5c",
+        "signature": "e7ef01fb3213b1be13321648ac2612d60e9e2742e28fc2fcf68d27fb965a8d5c"
       }
     },
     "options": {
@@ -489,24 +501,7 @@
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babylon/index.d.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts",
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/http-errors/index.d.ts": [
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -776,19 +771,6 @@
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/globals.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts"
       ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/http.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/index.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/http.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/index.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/range-parser/index.d.ts": [
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
@@ -811,10 +793,61 @@
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/http.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/http.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts": [
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/serve-static/index.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express-serve-static-core/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/cookie-parser/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/morgan/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/http-errors/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/path.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/cookie-parser/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/morgan/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babylon/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
       ]
@@ -944,15 +977,6 @@
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babylon/index.d.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/globals.d.ts": [
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
@@ -1219,19 +1243,6 @@
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/globals.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts"
       ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/http.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/index.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts": [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/http.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/index.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/range-parser/index.d.ts": [
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
@@ -1254,10 +1265,46 @@
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/http.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/http.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts": [
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/serve-static/index.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express-serve-static-core/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babylon/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/http-errors/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/cookie-parser/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/morgan/index.d.ts": [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/util.d.ts",
         "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts"
       ]
@@ -1294,190 +1341,6 @@
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/typescript/lib/lib.esnext.bigint.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/typescript/lib/lib.es2017.full.d.ts",
-      [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-        [
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 596,
-            "length": 3,
-            "messageText": "'req' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 596,
-            "length": 3,
-            "messageText": "Parameter 'req' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 601,
-            "length": 3,
-            "messageText": "'res' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 601,
-            "length": 3,
-            "messageText": "Parameter 'res' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 606,
-            "length": 4,
-            "messageText": "Parameter 'next' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 679,
-            "length": 3,
-            "messageText": "Parameter 'err' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 684,
-            "length": 3,
-            "messageText": "Parameter 'req' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 689,
-            "length": 3,
-            "messageText": "Parameter 'res' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 694,
-            "length": 4,
-            "messageText": "'next' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
-            "start": 694,
-            "length": 4,
-            "messageText": "Parameter 'next' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          }
-        ]
-      ],
-      [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts",
-        [
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts",
-            "start": 112,
-            "length": 3,
-            "messageText": "'req' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts",
-            "start": 112,
-            "length": 3,
-            "messageText": "Parameter 'req' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts",
-            "start": 117,
-            "length": 3,
-            "messageText": "Parameter 'res' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts",
-            "start": 122,
-            "length": 4,
-            "messageText": "'next' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts",
-            "start": 122,
-            "length": 4,
-            "messageText": "Parameter 'next' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          }
-        ]
-      ],
-      [
-        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts",
-        [
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts",
-            "start": 116,
-            "length": 3,
-            "messageText": "'req' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts",
-            "start": 116,
-            "length": 3,
-            "messageText": "Parameter 'req' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts",
-            "start": 121,
-            "length": 3,
-            "messageText": "Parameter 'res' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts",
-            "start": 126,
-            "length": 4,
-            "messageText": "'next' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          },
-          {
-            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts",
-            "start": 126,
-            "length": 4,
-            "messageText": "Parameter 'next' implicitly has an 'any' type.",
-            "category": 1,
-            "code": 7006
-          }
-        ]
-      ],
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts",
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babylon/index.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/globals.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/assert.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/async_hooks.d.ts",
@@ -1522,13 +1385,96 @@
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/util.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/globals.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/node/ts3.2/index.d.ts",
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts",
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/range-parser/index.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express-serve-static-core/index.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/mime/index.d.ts",
       "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/serve-static/index.d.ts",
-      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts"
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/connect/index.d.ts",
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/body-parser/index.d.ts",
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/express/index.d.ts",
+      [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts",
+        [
+          {
+            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts",
+            "start": 143,
+            "length": 3,
+            "messageText": "'req' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          },
+          {
+            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/index.ts",
+            "start": 172,
+            "length": 4,
+            "messageText": "'next' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          }
+        ]
+      ],
+      [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts",
+        [
+          {
+            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts",
+            "start": 150,
+            "length": 3,
+            "messageText": "'req' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          },
+          {
+            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/routes/users.ts",
+            "start": 179,
+            "length": 4,
+            "messageText": "'next' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          }
+        ]
+      ],
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babel-types/index.d.ts",
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/babylon/index.d.ts",
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/http-errors/index.d.ts",
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/cookie-parser/index.d.ts",
+      "/users/olapadesodeeqremilekun/documents/myreactapps/blake/node_modules/@types/morgan/index.d.ts",
+      [
+        "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
+        [
+          {
+            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
+            "start": 777,
+            "length": 3,
+            "messageText": "'req' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          },
+          {
+            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
+            "start": 791,
+            "length": 3,
+            "messageText": "'res' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          },
+          {
+            "file": "/users/olapadesodeeqremilekun/documents/myreactapps/blake/src/app.ts",
+            "start": 932,
+            "length": 4,
+            "messageText": "'next' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          }
+        ]
+      ]
     ]
   },
   "version": "3.5.3"
