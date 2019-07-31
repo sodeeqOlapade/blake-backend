@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb://localhost/blake",
+  "jwtSecretToken": "MY_jwt_SECRET_KEY"
+}
