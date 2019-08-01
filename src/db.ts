@@ -9,7 +9,7 @@ export const connectDb = async () => {
       useCreateIndex: true,
       useFindAndModify: false,
     });
-
+ 
     console.log('Connected to mongoDB...');
   } catch (err) {
     console.error(`Error connecting to mongoDB: `, err.message);

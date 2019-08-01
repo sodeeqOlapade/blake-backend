@@ -1,20 +1,22 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Router, Request, Response } from 'express';
 import Joi from '@hapi/joi';
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
 import gravatar from 'gravatar';
 import bcrypt from 'bcrypt';
 import config from 'config';
+import auth from '../middleware/auth';
+import { IUserRequest, IUserPayload } from '../typings/user';
 
-const router = express.Router();
+const router: Router = express.Router();
 
 //@routes     GET api/auth
 //@desc       Authenticates a signed in user
 //@access     Public
-router.get('/', auth, async (req, res) => {
+router.get('/', auth, async (req: IUserRequest, res: Response) => {
   //get user from db and send it back to client
   try {
-    const user = await User.findById(req.user.id).select('-password');
+    const user = await User.findById(req.user!.id).select('-password');
     res.status(200).json(user);
   } catch (err) {
     console.error('Error fetching user: ', err.message);
@@ -38,15 +40,14 @@ router.post('/', async (req: Request, res: Response) => {
     }
 
     //confirm password match
-
-    const passwordIsValid = await bcrypt.compare(password, user.password);
+    const passwordIsValid : boolean = await bcrypt.compare(password, user.password);
 
     if (!passwordIsValid) {
-      return res.status(400).json({ errors: [{ msg: 'Invalid Credentials' }] });
+      return res.status(400).json({ errors: [{ msg: 'Invalid email or password' }] });
     }
 
     //generate a payload
-    const payload = {
+    const payload : IUserPayload = {
       user: {
         id: user.id,
       },

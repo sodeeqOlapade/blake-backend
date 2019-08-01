@@ -1,15 +1,14 @@
 import createError from 'http-errors';
-import express, { Request, Response, NextFunction } from 'express';
+import express, {Express, Request, Response, NextFunction } from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import {connectDb} from './db';
+import indexRouter from './routes/index';
+import usersRouter from './routes/users';
+import authRouter from './routes/auth';
 
-
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-
-const app = express();
+const app: Express = express();
 
 //connect to mongoDb
 connectDb();
@@ -22,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/', indexRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req: Request, res: Response, next: NextFunction) {

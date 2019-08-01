@@ -5,7 +5,7 @@ import User from '../models/User';
 import gravatar from 'gravatar';
 import bcrypt from 'bcrypt';
 import config from 'config';
-import {IUserPayload} from '../typings/user'
+import { IUserPayload } from '../typings/user';
 const router = express.Router();
 
 //@routes     GET api/auth
@@ -98,4 +98,4 @@ router.post('/', async (req: Request, res: Response) => {
   }
 });
 
-module.exports = router;
+export default router;

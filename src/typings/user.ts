@@ -19,7 +19,7 @@ export interface IUser {
 }
 
 export interface IUserRequest extends express.Request {
-    user: IUser
+  user?: IUser;
 }
 
 /**
