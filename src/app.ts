@@ -41,4 +41,4 @@ app.use(function(err: any, req: Request, res: Response, next: NextFunction) {
   res.render('error');
 });
 
-module.exports = app;
+export default app;
