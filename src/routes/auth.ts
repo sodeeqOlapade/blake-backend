@@ -1,8 +1,6 @@
 import express, { Router, Request, Response } from 'express';
-import Joi from '@hapi/joi';
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
-import gravatar from 'gravatar';
 import bcrypt from 'bcrypt';
 import config from 'config';
 import auth from '../middleware/auth';
