@@ -1,7 +1,7 @@
 import express, { Request, Response, Router } from 'express';
 import Joi from '@hapi/joi';
 import jwt from 'jsonwebtoken';
-import User from '../models/User';
+import Business from '../models/Business';
 import gravatar from 'gravatar';
 import bcrypt from 'bcrypt';
 import config from 'config';
@@ -9,15 +9,15 @@ import { IUserPayload } from '../typings/user';
 
 const router: Router = express.Router();
 
-//@routes     GET api/auth
+//@routes     GET api/business
 //@desc       Test route
 //@access     Public
 router.get('/', function(req: Request, res: Response) {
   res.send('respond with a resource');
 });
 
-//schem to validate users object
-const userSchema = {
+//schema to validate business object
+const businessSchema = {
   name: Joi.string()
     .min(3)
     .max(125)
@@ -29,28 +29,33 @@ const userSchema = {
     .min(8)
     .max(15)
     .required(),
-  phone: Joi.string().length(11),
-  address: Joi.string(),
+  regno: Joi.string(),
+  phone: Joi.string()
+    .length(11)
+    .required(),
+  address: Joi.string().required(),
   avatar: Joi.string(),
 };
 
-//@routes     POST api/users
-//@desc       Register new user
+//@routes     POST api/business
+//@desc       Register new business
 //@access     Public
 router.post('/', async (req: Request, res: Response) => {
-  const { error } = Joi.validate(req.body, userSchema);
+  const { error } = Joi.validate(req.body, businessSchema);
   if (error) return res.status(400).send(error.details[0].message);
 
   try {
-    const { name, email, password, phone, address } = req.body;
+    const { name, email, password, phone, address, regno } = req.body;
 
     //check if user exists
-    let user = await User.findOne({ email });
-    if (user) {
-      return res.status(400).json({ errors: [{ msg: 'user already exist' }] });
+    let business = await Business.findOne({ email });
+    //more checks should go in here
+    //rethink error method to client
+    if (business) {
+      return res.status(400).json({ errors: [{ msg: 'business already exist' }] });
     }
 
-    //get user avatar
+    //get business avatar
     const avatar = gravatar.url(email, {
       s: '200',
       r: 'pg',
@@ -58,25 +63,26 @@ router.post('/', async (req: Request, res: Response) => {
     });
 
     //create User instance
-    user = new User({
+    business = new Business({
       name,
       email,
       phone,
       address,
+      regno,
       avatar,
     });
 
     //hash user password with bcrypt
     const salt = await bcrypt.genSalt(10);
 
-    user.password = await bcrypt.hash(password, salt);
+    business.password = await bcrypt.hash(password, salt);
 
-    await user.save();
+    await business.save();
 
     //generate a payload
     const payload: IUserPayload = {
       user: {
-        id: user.id,
+        id: business.id,
       },
     };
 

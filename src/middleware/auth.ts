@@ -23,6 +23,7 @@ async function authMiddleware(
     //verify available token
     const verifiedToken = jwt.verify(token, config.get('jwtSecretToken'));
     //below is type assertion to avoid tsc from erroing
+    //user here both goes for both customers and businesses
     (<IUserRequest>req).user = (<IUserRequest>verifiedToken).user;
 
     next();
