@@ -6,6 +6,7 @@ import logger from 'morgan';
 import {connectDb} from './db';
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
+import businessRouter from './routes/business';
 import authRouter from './routes/auth';
 
 const app: Express = express();
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/', indexRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/business', businessRouter);
 app.use('/api/auth', authRouter);
 
 // catch 404 and forward to error handler
