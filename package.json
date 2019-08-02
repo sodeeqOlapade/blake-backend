@@ -8,9 +8,6 @@
     "tsc": "tsc",
     "test": "jest"
   },
-  "transform": {
-    "^.+\\.tsx?$": "ts-jest"
-  },
   "dependencies": {
     "@hapi/joi": "^15.1.0",
     "@types/bcrypt": "^3.0.0",
