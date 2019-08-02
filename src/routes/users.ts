@@ -13,7 +13,7 @@ const router: Router = express.Router();
 //@desc       Test route
 //@access     Public
 router.get('/', function(req: Request, res: Response) {
-  res.send('respond with a resource');
+  res.json('respond with a resource');
 });
 
 //schem to validate users object
@@ -21,14 +21,23 @@ const userSchema = {
   name: Joi.string()
     .min(3)
     .max(125)
-    .required(),
+    .required()
+    .error(() => {
+      return 'name is required';
+    }),
   email: Joi.string()
     .email({ minDomainSegments: 2 })
-    .required(),
+    .required()
+    .error(() => {
+      return 'email is required';
+    }),
   password: Joi.string()
     .min(8)
     .max(15)
-    .required(),
+    .required()
+    .error(() => {
+      return 'password is required';
+    }),
   phone: Joi.string().length(11),
   address: Joi.string(),
   avatar: Joi.string(),
@@ -39,7 +48,7 @@ const userSchema = {
 //@access     Public
 router.post('/', async (req: Request, res: Response) => {
   const { error } = Joi.validate(req.body, userSchema);
-  if (error) return res.status(400).send(error.details[0].message);
+  if (error) return res.status(400).json(error.details[0].message);
 
   try {
     const { name, email, password, phone, address } = req.body;

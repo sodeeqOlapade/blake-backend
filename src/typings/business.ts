@@ -1,4 +1,3 @@
-import * as express from 'express';
 import { Document } from 'mongoose';
 
 //interface for User to give typings to User obj/instance
