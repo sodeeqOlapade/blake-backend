@@ -1,11 +1,44 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { Redirect } from 'react-router-dom';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import styles from './signup.module.css';
-import Input from '../../components/input/input';
-import Button from '../../components/button/button';
+import Form from '../../components/form/form';
+import LoginstatusContext from '../../context';
+import app from '../../firebaseconfig';
+
+// Add the Firebase products that you want to use
+import 'firebase/auth';
 
 function Signup() {
+  const [redirect, setRedirect] = useState(false);
+  const { loggedIn, setLoggedIn } = useContext(LoginstatusContext);
+
+  console.log('from sign up: ', loggedIn);
+  console.log('from sign up: ', setLoggedIn);
+
+  const createUser = (email, password) => {
+    app
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(response => {
+        // console.log(response);
+        setLoggedIn(!!response);
+        setRedirect(true);
+      })
+      .catch(function(error) {
+        console.log('Errorrrrrr:');
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        console.log('err: ', errorCode, 'msg: ', errorMessage);
+      });
+  };
+
+  if (redirect) {
+    return <Redirect to="/about" />;
+  }
+
   return (
     <>
       <Header />
@@ -23,42 +56,7 @@ function Signup() {
             <div className={styles.signupTitle}>
               <h2>SIGN UP</h2>
             </div>
-            <form>
-              <Input
-                placeholder="Name"
-                id="name"
-                value=""
-                label="name"
-                type="text"
-              />
-              <Input
-                placeholder="Email"
-                id="email"
-                value=""
-                label="email"
-                type="email"
-              />
-              <Input
-                placeholder="Mobile number"
-                id="mobile-number"
-                value=""
-                label="mobile-number"
-                type="number"
-              />
-              <Input
-                placeholder="Password"
-                id="password"
-                value=""
-                label="password"
-                type="password"
-              />
-
-              <Button
-                primary={false}
-                textValue="Sign Up"
-                className={styles.signupButton}
-              />
-            </form>
+            <Form onSubmit={createUser} />
           </div>
         </div>
       </section>

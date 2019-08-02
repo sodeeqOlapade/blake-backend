@@ -1,13 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Redirect } from 'react-router-dom';
 import styles from './login.module.css';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
-import Input from '../../components/input/input';
-import Button from '../../components/button/button';
+import Form from '../../components/form/form';
+import * as firebase from 'firebase/app';
+import firebaseConfig from '../../firebaseconfig';
+// Add the Firebase products that you want to use
+import 'firebase/auth';
+// firebase.initializeApp(firebaseConfig);
 
 
 
 function Login(props) {
+  const [redirect, setRedirect] = useState(false);
+
+  const loginUser = (email, password) => {
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(response => {
+        console.log(response)
+        setRedirect(true);
+      })
+      .catch(function(error) {
+        console.log('Errorrrrrr:');
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        console.log('err: ', errorCode, 'msg: ', errorMessage);
+      });
+  };
+
+  if (redirect) {
+    return <Redirect to="/about" />;
+  }
   return (
     <>
       <Header />
@@ -23,30 +50,9 @@ function Login(props) {
 
           <div className={styles.form}>
             <div className={styles.signupTitle}>
-              <h2>SIGN UP</h2>
+              <h2>LOGIN</h2>
             </div>
-            <form>
-              <Input
-                placeholder="Email"
-                id="email"
-                value=""
-                label="email"
-                type="email"
-              />
-              <Input
-                placeholder="Password"
-                id="password"
-                value=""
-                label="password"
-                type="password"
-              />
-
-              <Button
-                primary={false}
-                textValue="Login"
-                className={styles.signupButton}
-              />
-            </form>
+            <Form onSubmit={loginUser} />
           </div>
         </div>
       </section>

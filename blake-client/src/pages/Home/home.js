@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Header from '../../components/header/header';
 import Footer from '../../components/footer/footer';
 import styles from './home.module.css';
 import Button from '../../components/button/button';
 import { Link } from 'react-router-dom';
 import Card from '../../components/card/card';
+import LoginstatusContext from '../../context';
 
 function Home(props) {
+  const loogedIn = useContext(LoginstatusContext);
+  console.log('from home: ', loogedIn);
   return (
     <>
       <Header />
@@ -41,7 +44,7 @@ function Home(props) {
         <div className={styles.bannerPic} />
       </div>
 
-      <h2 className = {styles.pros}>With Blake, you've got...</h2>
+      <h2 className={styles.pros}>With Blake, you've got...</h2>
 
       <div className={styles.cards}>
         <Card
