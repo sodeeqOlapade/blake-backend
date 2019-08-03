@@ -5,7 +5,8 @@ import User from '../models/User';
 import gravatar from 'gravatar';
 import bcrypt from 'bcrypt';
 import config from 'config';
-import { IUserPayload } from '../typings/user';
+import { IUserPayload, IUserRequest } from '../typings/user';
+import auth from '../middleware/auth';
 
 const router: Router = express.Router();
 
@@ -43,6 +44,26 @@ const userSchema = {
   avatar: Joi.string(),
 };
 
+const userUpdateSchema = {
+  name: Joi.string()
+    .min(3)
+    .max(125)
+    .required()
+    .error(() => {
+      return 'name is required';
+    }),
+  email: Joi.string()
+    .email({ minDomainSegments: 2 })
+    .required()
+    .error(() => {
+      return 'email is required';
+    }),
+  phone: Joi.string().length(11),
+  gender: Joi.string().max(17),
+  address: Joi.string(),
+  avatar: Joi.string(),
+};
+
 //@routes     POST api/users
 //@desc       Register new user
 //@access     Public
@@ -56,7 +77,9 @@ router.post('/', async (req: Request, res: Response) => {
     //check if user exists
     let user = await User.findOne({ email });
     if (user) {
-      return res.status(400).json({ errors: [{ msg: 'user already exist' }] });
+      return res
+        .status(400)
+        .json({ errors: [{ msg: 'email already in use' }] });
     }
 
     //get user avatar
@@ -100,6 +123,33 @@ router.post('/', async (req: Request, res: Response) => {
         }
 
         res.json({ token });
+      },
+    );
+  } catch (err) {
+    console.error('Error: ', err.message);
+    return res.status(500).send('Server error...');
+  }
+});
+
+//@routes     PUT api/users
+//@desc       Update existing user
+//@access     Private
+router.put('/:user_id', auth, async (req: IUserRequest, res: Response) => {
+  const { error } = Joi.validate(req.body, userUpdateSchema);
+  if (error) return res.status(400).json(error.details[0].message);
+
+  try {
+    //check if user exists
+    await User.findByIdAndUpdate(
+      { _id: req.params.user_id },
+      { $set: req.body },
+      { new: true },
+      err => {
+        if (err) {
+          res.status(400).json({ msg: err.message });
+          return;
+        }
+        res.status(200).json('update is successful');
       },
     );
   } catch (err) {
