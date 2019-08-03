@@ -1,18 +1,22 @@
 import createError from 'http-errors';
-import express, {Express, Request, Response, NextFunction } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import {connectDb} from './db';
+import { connectDb } from './db';
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 import businessRouter from './routes/business';
 import authRouter from './routes/auth';
+import config from 'config';
 
 const app: Express = express();
 
+const db: string = process.env.NODE_ENV === 'test'
+  ? config.get('mongoURI-test')
+  : config.get('mongoURI');
 //connect to mongoDb
-connectDb();
+connectDb(db);
 
 app.use(logger('dev'));
 app.use(express.json());
