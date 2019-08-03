@@ -6,7 +6,7 @@
   "scripts": {
     "start": "bin/www",
     "tsc": "tsc",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@hapi/joi": "^15.1.0",
