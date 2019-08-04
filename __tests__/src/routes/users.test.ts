@@ -66,7 +66,7 @@ describe('test /api/users endpoint', function() {
       .send(data)
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect('{"errors":[{"msg":"user already exist"}]}')
+      .expect('{"errors":[{"msg":"email already in use"}]}')
       .expect(400)
       .end(err => {
         if (err) return done(err);

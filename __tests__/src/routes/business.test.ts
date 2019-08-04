@@ -20,8 +20,8 @@ describe('test /api/businesses endpoint', function() {
       name: 'dummy dummy',
       email: 'dummy@gmail.com',
       password: 'password',
-      address: "Lagos, Nigeria"
-      //   phone:'09024784735'
+      address: 'Lagos, Nigeria',
+      //   phoneOne:'09024784735'
     };
     request(app)
       .post('/api/businesses')
@@ -38,12 +38,12 @@ describe('test /api/businesses endpoint', function() {
 
   it('POST to /api/businesses respond with 200', async function(done) {
     let data = {
-      // no phone number
+      // with phone number
       name: 'dummy dummy',
       email: 'dummy@gmail.com',
       password: 'password',
-      phone: '09024784735',
-      address: "Lagos, Nigeria"
+      phoneOne: '09024784735',
+      officeAddress: 'Lagos, Nigeria',
     };
     request(app)
       .post('/api/businesses')
@@ -59,19 +59,18 @@ describe('test /api/businesses endpoint', function() {
 
   it('POST to /api/businesses respond with 400 ', async function(done) {
     let data = {
-      // no phone number
       name: 'dummy dummy',
       email: 'dummy@gmail.com',
       password: 'password',
-      phone: '09024784735',
-      address: "Lagos, Nigeria"
+      phoneOne: '09024784735',
+      officeAddress: 'Lagos, Nigeria',
     };
     request(app)
       .post('/api/businesses')
       .send(data)
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect('{"errors":[{"msg":"business already exist"}]}')
+      .expect('{"errors":[{"msg":"email already in use"}]}')
       .expect(400)
       .end(err => {
         if (err) return done(err);
