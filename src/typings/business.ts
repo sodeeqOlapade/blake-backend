@@ -5,10 +5,29 @@ export interface Business {
   name: string;
   email: string;
   password: string;
-  regno?:string;
-  phone: string;
-  address: string;
+  regno?: string;
+  phoneOne: string;
+  phoneTwo?: string;
+  postcode?: string;
+  customerRelationOfficer?: CustomerRelationOfficer;
+  connections?: Connection;
+  officeAddress: string;
+  city?: string;
+  state?: string;
   avatar?: string;
+}
+
+interface Connection {
+  website?: string;
+  facebook?: string;
+  instagram?: string;
+  twitter?: string;
+  linkedin?: string;
+}
+
+interface CustomerRelationOfficer {
+  name: string;
+  position: string;
 }
 
 // export interface IBusinessPayload {

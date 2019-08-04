@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import { Businessmodel } from '../typings/business';
 
-
 const BusinessSchema = new mongoose.Schema({
   /** 
      *   Everything in Mongoose starts with a Schema. Each schema maps 
@@ -33,17 +32,53 @@ const BusinessSchema = new mongoose.Schema({
     type: String,
   },
 
-  phone: {
+  phoneOne: {
     type: String,
     required: true,
     length: 11,
   },
-
-  address: {
+  phoneTwo: {
     type: String,
-    required:true
+    length: 11,
   },
-
+  postcode: {
+    type: String,
+  },
+  customerRelationOfficer: {
+    name: {
+      type: String,
+    },
+    position: {
+      type: String,
+    },
+  },
+  connections: {
+    website: {
+      type: String,
+    },
+    facebook: {
+      type: String,
+    },
+    instagram: {
+      type: String,
+    },
+    twitter: {
+      type: String,
+    },
+    linkedin: {
+      type: String,
+    },
+  },
+  officeAddress: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+  },
+  state: {
+    type: String,
+  },
   avatar: {
     type: String,
   },

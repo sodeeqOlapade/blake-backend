@@ -5,7 +5,7 @@ import User from '../models/User';
 import gravatar from 'gravatar';
 import bcrypt from 'bcrypt';
 import config from 'config';
-import { IUserPayload, IUserRequest } from '../typings/user';
+import { IUserPayload, IUserRequest, Usermodel } from '../typings/user';
 import auth from '../middleware/auth';
 
 const router: Router = express.Router();
@@ -134,14 +134,14 @@ router.post('/', async (req: Request, res: Response) => {
 //@routes     PUT api/users
 //@desc       Update existing user
 //@access     Private
-router.put('/:user_id', auth, async (req: IUserRequest, res: Response) => {
+router.put('/update', auth, async (req: IUserRequest, res: Response) => {
   const { error } = Joi.validate(req.body, userUpdateSchema);
   if (error) return res.status(400).json(error.details[0].message);
 
   try {
     //check if user exists
-    await User.findByIdAndUpdate(
-      { _id: req.params.user_id },
+    const user : Usermodel | null = await User.findByIdAndUpdate(
+      { _id: req.user!.id },
       { $set: req.body },
       { new: true },
       err => {
@@ -149,9 +149,9 @@ router.put('/:user_id', auth, async (req: IUserRequest, res: Response) => {
           res.status(400).json({ msg: err.message });
           return;
         }
-        res.status(200).json('update is successful');
       },
-    );
+    ).select('-password');
+    res.status(200).json(user);
   } catch (err) {
     console.error('Error: ', err.message);
     return res.status(500).send('Server error...');

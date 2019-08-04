@@ -5,7 +5,9 @@ import Business from '../models/Business';
 import gravatar from 'gravatar';
 import bcrypt from 'bcrypt';
 import config from 'config';
-import { IUserPayload } from '../typings/user';
+import { IUserPayload, IUserRequest } from '../typings/user';
+import { Businessmodel } from '../typings/business';
+import auth from '../middleware/auth';
 
 const router: Router = express.Router();
 
@@ -38,18 +40,77 @@ const businessSchema = {
     .error(() => {
       return 'password is required';
     }),
+  phoneOne: Joi.string()
+    .required()
+    .length(11)
+    .error(() => {
+      return 'phone number is required';
+    }),
+  officeAddress: Joi.string()
+    .required()
+    .error(() => {
+      return 'address is required';
+    }),
+  avatar: Joi.string(),
+};
+
+//schema to validate business update object
+const businessUpdateSchema = {
+  name: Joi.string()
+    .min(3)
+    .max(125)
+    .required()
+    .error(() => {
+      return 'name is required';
+    }),
+  email: Joi.string()
+    .email({ minDomainSegments: 2 })
+    .required()
+    .error(() => {
+      return 'email is required';
+    }),
   regno: Joi.string(),
-  phone: Joi.string()
+  phoneOne: Joi.string()
     .length(11)
     .required()
     .error(() => {
       return 'phone number is required';
     }),
-  address: Joi.string()
+  phoneTwo: Joi.string().length(11),
+  postcode: Joi.string().max(10),
+  customerRelationOfficer: Joi.object().keys({
+    name: Joi.string()
+      .min(3)
+      .max(125)
+      .required()
+      .error(() => {
+        return 'contact person name is required';
+      }),
+    position: Joi.string()
+      .max(50)
+      .required()
+      .error(() => {
+        return 'contact person position required';
+      }),
+  }),
+  connections: Joi.object().keys({
+    website: Joi.string(),
+    facebook: Joi.string(),
+    instagram: Joi.string(),
+    twitter: Joi.string(),
+    linkedin: Joi.string(),
+  }),
+  officeAddress: Joi.string()
     .required()
     .error(() => {
       return 'address is required';
     }),
+  city: Joi.string()
+    .min(3)
+    .max(16),
+  state: Joi.string()
+    .min(3)
+    .max(16),
   avatar: Joi.string(),
 };
 
@@ -61,16 +122,16 @@ router.post('/', async (req: Request, res: Response) => {
   if (error) return res.status(400).json(error.details[0].message);
 
   try {
-    const { name, email, password, phone, address, regno } = req.body;
+    const { name, email, password, phoneOne, officeAddress } = req.body;
 
     //check if user exists
-    let business = await Business.findOne({ email });
+    let business: Businessmodel | null = await Business.findOne({ email });
     //more checks should go in here
     //rethink error method to client
     if (business) {
       return res
         .status(400)
-        .json({ errors: [{ msg: 'business already exist' }] });
+        .json({ errors: [{ msg: 'email already in use' }] });
     }
 
     //get business avatar
@@ -84,9 +145,8 @@ router.post('/', async (req: Request, res: Response) => {
     business = new Business({
       name,
       email,
-      phone,
-      address,
-      regno,
+      phoneOne,
+      officeAddress,
       avatar,
     });
 
@@ -117,6 +177,33 @@ router.post('/', async (req: Request, res: Response) => {
         res.json({ token });
       },
     );
+  } catch (err) {
+    console.error('Error: ', err.message);
+    return res.status(500).send('Server error...');
+  }
+});
+
+//@routes     PUT api/users
+//@desc       Update existing user
+//@access     Private
+router.put('/update', auth, async (req: IUserRequest, res: Response) => {
+  const { error } = Joi.validate(req.body, businessUpdateSchema);
+  if (error) return res.status(400).json(error.details[0].message);
+
+  try {
+    //check if user exists
+    const business: Businessmodel | null = await Business.findByIdAndUpdate(
+      { _id: req.user!.id },
+      { $set: req.body },
+      { new: true },
+      err => {
+        if (err) {
+          res.status(400).json({ msg: err.message });
+          return;
+        }
+      },
+    ).select('-password');
+    res.status(200).json(business);
   } catch (err) {
     console.error('Error: ', err.message);
     return res.status(500).send('Server error...');

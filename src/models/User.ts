@@ -33,6 +33,10 @@ const UserSchema = new mongoose.Schema({
     length: 11,
   },
 
+  gender: {
+    type: String,
+  },
+  
   address: {
     type: String,
   },
