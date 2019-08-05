@@ -140,12 +140,12 @@ router.put('/update', auth, async (req: IUserRequest, res: Response) => {
 
   try {
     //check if user exists
-    const user : Usermodel | null = await User.findByIdAndUpdate(
+    const user: Usermodel | null = await User.findByIdAndUpdate(
       { _id: req.user!.id },
       { $set: req.body },
       { new: true },
       err => {
-        if (err) {
+        if (error) {
           res.status(400).json({ msg: err.message });
           return;
         }
@@ -154,6 +154,21 @@ router.put('/update', auth, async (req: IUserRequest, res: Response) => {
     res.status(200).json(user);
   } catch (err) {
     console.error('Error: ', err.message);
+    return res.status(500).send('Server error...');
+  }
+});
+
+// @route   DELETE api/users/
+// @desc    Delete a user from db
+// @access  Private
+router.delete('/', auth, async (req: IUserRequest, res: Response) => {
+  try {
+    const user: Usermodel | null = await User.findOneAndRemove({
+      _id: req.user!.id,
+    });
+    res.status(200).json(user);
+  } catch (error) {
+    console.error('Error: ', error.message);
     return res.status(500).send('Server error...');
   }
 });

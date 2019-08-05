@@ -114,7 +114,7 @@ const businessUpdateSchema = {
   avatar: Joi.string(),
 };
 
-//@routes     POST api/business
+//@routes     POST api/businesse
 //@desc       Register new business
 //@access     Public
 router.post('/', async (req: Request, res: Response) => {
@@ -183,8 +183,8 @@ router.post('/', async (req: Request, res: Response) => {
   }
 });
 
-//@routes     PUT api/users
-//@desc       Update existing user
+//@routes     PUT api/business
+//@desc       Update existing business
 //@access     Private
 router.put('/update', auth, async (req: IUserRequest, res: Response) => {
   const { error } = Joi.validate(req.body, businessUpdateSchema);
@@ -206,6 +206,21 @@ router.put('/update', auth, async (req: IUserRequest, res: Response) => {
     res.status(200).json(business);
   } catch (err) {
     console.error('Error: ', err.message);
+    return res.status(500).send('Server error...');
+  }
+});
+
+// @route   DELETE api/businesses/
+// @desc    Delete a business from db
+// @access  Private
+router.delete('/', auth, async (req: IUserRequest, res: Response) => {
+  try {
+    const business: Businessmodel | null = await Business.findOneAndRemove({
+      _id: req.user!.id,
+    });
+    res.status(200).json(business);
+  } catch (error) {
+    console.error('Error: ', error.message);
     return res.status(500).send('Server error...');
   }
 });

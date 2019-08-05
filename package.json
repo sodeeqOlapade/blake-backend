@@ -4,8 +4,8 @@
   "private": true,
   "main": "bin/www",
   "scripts": {
-    "start": "bin/www",
-    "tsc": "tsc",
+    "start": "bin/www --watch",
+    "tsc": "tsc --watch",
     "test": "jest --coverage"
   },
   "dependencies": {
