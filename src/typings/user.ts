@@ -9,6 +9,7 @@ export interface User {
   phone?: string;
   address?: string;
   avatar?: string;
+  created?: Date;
 }
 
 export interface IUserPayload {

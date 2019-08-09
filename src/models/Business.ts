@@ -44,14 +44,18 @@ const BusinessSchema = new mongoose.Schema({
   postcode: {
     type: String,
   },
-  customerRelationOfficer: {
-    name: {
-      type: String,
+  customerRelationOfficers: [
+    {
+      name: {
+        type: String,
+        required: true,
+      },
+      position: {
+        type: String,
+        required: true,
+      },
     },
-    position: {
-      type: String,
-    },
-  },
+  ],
   connections: {
     website: {
       type: String,
@@ -81,6 +85,10 @@ const BusinessSchema = new mongoose.Schema({
   },
   avatar: {
     type: String,
+  },
+  created: {
+    type: Date,
+    default: Date.now(),
   },
 });
 

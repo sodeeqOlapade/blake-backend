@@ -6,7 +6,7 @@ import gravatar from 'gravatar';
 import bcrypt from 'bcrypt';
 import config from 'config';
 import { IUserPayload, IUserRequest } from '../typings/user';
-import { Businessmodel } from '../typings/business';
+import { Businessmodel, CustomerRelationOfficer } from '../typings/business';
 import auth from '../middleware/auth';
 
 const router: Router = express.Router();
@@ -78,21 +78,6 @@ const businessUpdateSchema = {
     }),
   phoneTwo: Joi.string().length(11),
   postcode: Joi.string().max(10),
-  customerRelationOfficer: Joi.object().keys({
-    name: Joi.string()
-      .min(3)
-      .max(125)
-      .required()
-      .error(() => {
-        return 'contact person name is required';
-      }),
-    position: Joi.string()
-      .max(50)
-      .required()
-      .error(() => {
-        return 'contact person position required';
-      }),
-  }),
   connections: Joi.object().keys({
     website: Joi.string(),
     facebook: Joi.string(),
@@ -112,6 +97,22 @@ const businessUpdateSchema = {
     .min(3)
     .max(16),
   avatar: Joi.string(),
+};
+
+const contactPersonSchema = {
+  name: Joi.string()
+    .min(3)
+    .max(125)
+    .required()
+    .error(() => {
+      return 'contact person name is required';
+    }),
+  position: Joi.string()
+    .max(50)
+    .required()
+    .error(() => {
+      return 'contact person position required';
+    }),
 };
 
 //@routes     POST api/businesse
@@ -168,7 +169,7 @@ router.post('/', async (req: Request, res: Response) => {
     jwt.sign(
       payload,
       config.get('jwtSecretToken'),
-      { expiresIn: 360000 },
+      { expiresIn: 3600 },
       (err, token) => {
         if (err) {
           throw err;
@@ -224,5 +225,124 @@ router.delete('/', auth, async (req: IUserRequest, res: Response) => {
     return res.status(500).send('Server error...');
   }
 });
+
+// @route    PUT api/businesses/update/business_is/contactperson
+// @desc     Add Contact Person(s) to a business
+// @access   Private
+router.put('/contactperson', auth, async (req: IUserRequest, res: Response) => {
+  const { error } = Joi.validate(req.body, contactPersonSchema);
+  if (error) return res.status(400).json(error.details[0].message);
+
+  const { name, position } = req.body;
+
+  const newContactPerson: CustomerRelationOfficer = {
+    name,
+    position,
+  };
+
+  try {
+    const business: Businessmodel | null = await Business.findOne({
+      _id: req.user!.id,
+    });
+
+    //add logic to check if the name has been added before
+    business!.customerRelationOfficers!.push(newContactPerson);
+
+    await business!.save();
+
+    res.json(business);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+// @route    PUT api/businesses/update/business_id/contactperson/:contactperson_id'
+// @desc     Update Contact Person(s) info
+// @access   Private
+router.put(
+  '/contactperson/:contactperson_id',
+  auth,
+  async (req: IUserRequest, res: Response) => {
+    const { error } = Joi.validate(req.body, contactPersonSchema);
+    if (error) return res.status(400).json(error.details[0].message);
+
+    const { name, position } = req.body;
+
+    const newContactPerson: CustomerRelationOfficer = {
+      name,
+      position,
+    };
+
+    try {
+      //find business first
+      const business: Businessmodel | null = await Business.findOne({
+        _id: req.user!.id,
+      });
+      //find the contact person to be updated
+      const contactpersonIndex = business!
+        .customerRelationOfficers!.map((contactperson: any) =>
+          contactperson._id.toString(),
+        )
+        .indexOf(req.params.contactperson_id);
+
+      if (contactpersonIndex === -1) {
+        console.error(
+          `Contact Person ${req.params.contactperson_id} Does not exist`,
+        );
+        return res.status(500).json({ msg: 'Server Error' });
+      }
+
+      business!.customerRelationOfficers![
+        contactpersonIndex
+      ] = newContactPerson;
+
+      await business!.save();
+
+      res.json(business);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  },
+);
+
+// @route    DELETE api/businesses/update/business_id/contactperson/:contactperson_id'
+// @desc     Delete Contact Person(s)  info on a business account
+// @access   Private
+router.delete(
+  '/contactperson/:contactperson_id',
+  auth,
+  async (req: IUserRequest, res: Response) => {
+    try {
+      //find business first
+      const business: Businessmodel | null = await Business.findOne({
+        _id: req.user!.id,
+      });
+      //find the contact person to be updated
+      const contactpersonIndex = business!
+        .customerRelationOfficers!.map((contactperson: any) =>
+          contactperson._id.toString(),
+        )
+        .indexOf(req.params.contactperson_id);
+
+      if (contactpersonIndex === -1) {
+        console.error(
+          `Contact Person ${req.params.contactperson_id} Does not exist`,
+        );
+        return res.status(500).json({ msg: 'Server Error' });
+      }
+
+      business!.customerRelationOfficers!.splice(contactpersonIndex, 1);
+
+      await business!.save();
+
+      res.json(business);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
+    }
+  },
+);
 
 export default router;

@@ -9,15 +9,16 @@ export interface Business {
   phoneOne: string;
   phoneTwo?: string;
   postcode?: string;
-  customerRelationOfficer?: CustomerRelationOfficer;
+  customerRelationOfficers?: CustomerRelationOfficer[];
   connections?: Connection;
   officeAddress: string;
   city?: string;
   state?: string;
   avatar?: string;
+  created?: Date;
 }
 
-interface Connection {
+export interface Connection {
   website?: string;
   facebook?: string;
   instagram?: string;
@@ -25,10 +26,11 @@ interface Connection {
   linkedin?: string;
 }
 
-interface CustomerRelationOfficer {
+export interface CustomerRelationOfficer {
   name: string;
   position: string;
 }
+
 
 // export interface IBusinessPayload {
 //   user: IUser;
