@@ -8,6 +8,7 @@ import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 import businessRouter from './routes/business';
 import authRouter from './routes/auth';
+import feedbackRouter from './routes/feedback';
 import config from 'config';
 
 const app: Express = express();
@@ -28,6 +29,7 @@ app.use('/api/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/businesses', businessRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/feedbacks', feedbackRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req: Request, res: Response, next: NextFunction) {
