@@ -10,6 +10,7 @@ import businessRouter from './routes/business';
 import authRouter from './routes/auth';
 import feedbackRouter from './routes/feedback';
 import config from 'config';
+import cors from 'cors';
 
 const app: Express = express();
 
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 
 app.use('/api/', indexRouter);
 app.use('/api/users', usersRouter);

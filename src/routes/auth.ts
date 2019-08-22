@@ -7,6 +7,8 @@ import config from 'config';
 import auth from '../middleware/auth';
 import { IUserRequest, IUserPayload, Usermodel } from '../typings/user';
 import { Businessmodel } from '../typings/business';
+import httpStatus from 'http-status';
+import sendResponse from '../helpers/response';
 
 const router: Router = express.Router();
 
@@ -49,11 +51,14 @@ router.post('/', async (req: Request, res: Response) => {
     }
     //check if user or business and allow sign in if any else error
     if (!user) {
-      res
-        .status(400)
-        .json({ errors: [{ msg: 'Your account name or password is incorrect' }] });
-
-      return;
+      return res.json(
+        sendResponse(
+          httpStatus.BAD_REQUEST,
+          'Your account name or password is incorrect',
+          'Your account name or password is incorrect',
+          null,
+        ),
+      );
     }
 
     //confirm password match
@@ -62,10 +67,16 @@ router.post('/', async (req: Request, res: Response) => {
       user.password,
     );
 
-    if (!passwordIsValid) {
-      res.status(400).json({ errors: [{ msg: 'Your account name or password is incorrect' }] });
 
-      return;
+    if (!passwordIsValid) {
+      return res.json(
+        sendResponse(
+          httpStatus.BAD_REQUEST,
+          'Your account name or password is incorrect',
+          'Your account name or password is incorrect',
+          null,
+        ),
+      );
     }
 
     //generate a payload
@@ -86,7 +97,7 @@ router.post('/', async (req: Request, res: Response) => {
           throw err;
         }
 
-        res.json({ token });
+        res.json(sendResponse(httpStatus.OK, 'Successful', null, token));
       },
     );
   } catch (err) {

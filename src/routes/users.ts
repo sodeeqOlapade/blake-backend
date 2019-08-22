@@ -1,4 +1,5 @@
 import express, { Request, Response, Router } from 'express';
+import httpStatus from 'http-status';
 import Joi from '@hapi/joi';
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
@@ -7,6 +8,7 @@ import bcrypt from 'bcrypt';
 import config from 'config';
 import { IUserPayload, IUserRequest, Usermodel } from '../typings/user';
 import auth from '../middleware/auth';
+import sendResponse from '../helpers/response';
 
 const router: Router = express.Router();
 
@@ -69,17 +71,29 @@ const userUpdateSchema = {
 //@access     Public
 router.post('/', async (req: Request, res: Response) => {
   const { error } = Joi.validate(req.body, userSchema);
-  if (error) return res.status(400).json(error.details[0].message);
+  if (error)
+    return res.json(
+      sendResponse(
+        httpStatus.BAD_REQUEST,
+        error.details[0].message,
+        error.details[0].message,
+        null,
+      ),
+    );
 
   try {
     const { name, email, password, phone, address } = req.body;
-
     //check if user exists
     let user = await User.findOne({ email });
     if (user) {
-      return res
-        .status(400)
-        .json({ errors: [{ msg: 'email already in use' }] });
+      return res.json(
+        sendResponse(
+          httpStatus.BAD_REQUEST,
+          'email already in use',
+          'email already in use',
+          null,
+        ),
+      );
     }
 
     //get user avatar
@@ -121,8 +135,7 @@ router.post('/', async (req: Request, res: Response) => {
         if (err) {
           throw err;
         }
-
-        res.json({ token });
+        res.json(sendResponse(httpStatus.OK, 'Signup Successful', null, token));
       },
     );
   } catch (err) {

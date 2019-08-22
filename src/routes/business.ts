@@ -1,6 +1,7 @@
 import express, { Request, Response, Router } from 'express';
 import Joi from '@hapi/joi';
 import jwt from 'jsonwebtoken';
+import httpStatus from 'http-status';
 import Business from '../models/Business';
 import gravatar from 'gravatar';
 import bcrypt from 'bcrypt';
@@ -8,6 +9,7 @@ import config from 'config';
 import { IUserPayload, IUserRequest } from '../typings/user';
 import { Businessmodel, CustomerRelationOfficer } from '../typings/business';
 import auth from '../middleware/auth';
+import sendResponse from '../helpers/response';
 
 const router: Router = express.Router();
 
@@ -120,7 +122,15 @@ const contactPersonSchema = {
 //@access     Public
 router.post('/', async (req: Request, res: Response) => {
   const { error } = Joi.validate(req.body, businessSchema);
-  if (error) return res.status(400).json(error.details[0].message);
+  if (error)
+    return res.json(
+      sendResponse(
+        httpStatus.BAD_REQUEST,
+        error.details[0].message,
+        error.details[0].message,
+        null,
+      ),
+    );
 
   try {
     const { name, email, password, phoneOne, officeAddress } = req.body;
@@ -130,9 +140,14 @@ router.post('/', async (req: Request, res: Response) => {
     //more checks should go in here
     //rethink error method to client
     if (business) {
-      return res
-        .status(400)
-        .json({ errors: [{ msg: 'email already in use' }] });
+      return res.json(
+        sendResponse(
+          httpStatus.BAD_REQUEST,
+          'email already in use',
+          'email already in use',
+          null,
+        ),
+      );
     }
 
     //get business avatar
@@ -175,7 +190,7 @@ router.post('/', async (req: Request, res: Response) => {
           throw err;
         }
 
-        res.json({ token });
+        res.json(sendResponse(httpStatus.OK, 'Signup Successful', null, token));
       },
     );
   } catch (err) {
