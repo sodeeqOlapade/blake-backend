@@ -9,7 +9,7 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "@hapi/joi": "^15.1.0",
+    "@hapi/joi": "^15.1.1",
     "@types/bcrypt": "^3.0.0",
     "@types/cors": "^2.8.6",
     "bcrypt": "^3.0.6",
